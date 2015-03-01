@@ -100,4 +100,63 @@ bool bool7 = "off".To<bool>();
 bool bool8 = "on".To<bool>();
 ```
 
+####How to Convert Strongly Type to ExpandoObject?
 
+```csharp
+public class Person
+{
+    public int PersonID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string City { get; set; }
+}
+
+var person1 = new Person { PersonID = 1, FirstName = "Enes", LastName = "Hançer" }.To<ExpandoObject>();
+
+var person2 = new Person { PersonID = 2, FirstName = "Sinan", LastName = "Hançer" }.ToExpando();
+```
+
+####How to Convert Dictionary Type to ExpandoObject or Strongly Type Object?
+
+```csharp
+public class Person
+{
+    public int PersonID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string City { get; set; }
+}
+
+//Person type has 4 properties which are PersonID, FirstName, LastName and City.
+//We can create Dictionary which contains those properties. and than can convert to
+//Person type easily.
+var personDict = new Dictionary<string, object>()
+{
+    {"PersonID", 1},
+    {"FirstName", "Kenan"},
+    {"LastName", "Hançer"},
+    {"City", "Istanbul"}
+};
+
+//Convert Dictionary to Person strongly type object.
+Person personStronglyObj = personDict.To<Person>();
+
+//Convert Dictionary to ExpandoObject
+var personExpandoObject = personDict.ToExpando();
+```
+
+####How to Convert object to Dictionary?
+
+```csharp
+public class Person
+{
+    public int PersonID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string City { get; set; }
+}
+
+var personObj = new Person { PersonID = 1, FirstName = "Enes", LastName = "Hançer" };
+
+IDictionary<string, object> personToDict = personObj.ToDictionary();
+```
