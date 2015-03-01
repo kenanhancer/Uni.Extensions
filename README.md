@@ -164,11 +164,11 @@ IDictionary<string, object> personToDict = personObj.ToDictionary();
 ####How to Convert object to DataTable?
 
 ```csharp
-//Anonymous object to Dictionary
+//Anonymous object to DataTable
 var anonymousObj = new { PersonID = 1, FirstName = "Kenan", LastName = "Hançer", City = "İstanbul" };
 DataTable dt1 = anonymousObj.ToDataTable();
 
-//Strongly type to Dictionary
+//Strongly type to DataTable
 var person1 = new Person { PersonID = 1, FirstName = "Enes", LastName = "Hançer" };
 DataTable dt2 = person1.ToDataTable();
 
@@ -178,6 +178,8 @@ expandoObj.FirstName = "Enes";
 expandoObj.LastName = "Hançer";
 expandoObj.City = "İstanbul";
 expandoObj.Age = 1;
+
+//ExpandoObject to DataTable
 DataTable dt3 = (expandoObj as object).ToDataTable();
 
 var customerList = new List<dynamic>{
@@ -185,5 +187,7 @@ var customerList = new List<dynamic>{
     new { first_name = "sinan", last_name = "hancer", email = "kenanhancer@hotmail.com", active = true, store_id = 1, address_id = 5, create_date=DateTime.Now },
     new { first_name = "kemal", last_name = "hancer", email = "kenanhancer@hotmail.com", active = true, store_id = 1, address_id = 5, create_date=DateTime.Now }
 };
+
+//List to DataTable
 DataTable dt4 = customerList.ToDataTable();
 ```
