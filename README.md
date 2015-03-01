@@ -191,3 +191,15 @@ var customerList = new List<dynamic>{
 //List to DataTable
 DataTable dt4 = customerList.ToDataTable();
 ```
+
+####How to Convert Collection to CSV?
+
+```csharp
+var customerList = new List<dynamic>{
+    new { first_name = "kenan", last_name = "hancer", email = "kenanhancer@hotmail.com", active = true, store_id = 1, address_id = 5, create_date=DateTime.Now },
+    new { first_name = "sinan", last_name = "hancer", email = "kenanhancer@hotmail.com", active = true, store_id = 1, address_id = 5, create_date=DateTime.Now },
+    new { first_name = "kemal", last_name = "hancer", email = "kenanhancer@hotmail.com", active = true, store_id = 1, address_id = 5, create_date=DateTime.Now }
+};
+
+string csvResult = customerList.WriteCsv<dynamic>(Encoding.Default);
+```
