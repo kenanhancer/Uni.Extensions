@@ -37,3 +37,21 @@ TypeCode? dateTimeTypeCode_AsNotNullable = "DateTime@".To<TypeCode?>(null);
 
 TypeCode booleanTypeCode_AsValid = "Boolean".To<TypeCode>();
 ```
+
+##How to Convert Primitive string values to Primitive Types?
+
+```csharp
+int integer_AsValid = "25".To<int>(-1);
+
+int integer_AsNotValid = "25j".To<int>(-1);
+
+int? integer_AsNullable = "25j".To<int?>(null);
+```
+
+#How to Convert DateTime and TimeSpan string values to DateTime and TimeSpan Types?
+
+```csharp
+DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
+
+DateTime dateTime2 = DateTime.Now.ToShortDateString().To<DateTime>();
+```
