@@ -48,7 +48,7 @@ int integer_AsNotValid = "25j".To<int>(-1);
 int? integer_AsNullable = "25j".To<int?>(null);
 ```
 
-#How to Convert DateTime and TimeSpan string values to DateTime and TimeSpan Types?
+##How to Convert DateTime and TimeSpan string values to DateTime and TimeSpan Types?
 
 ```csharp
 DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
