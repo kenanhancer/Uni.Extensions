@@ -31,8 +31,10 @@ As an example, I use TypeCode Enum in System namespace.
 ```csharp
 TypeCode dateTimeTypeCode_AsValid = "DateTime".To<TypeCode>();
 
+//"DateTime@" value is not valid. So, result will be TypeCode.Empty
 TypeCode dateTimeTypeCode_AsNotValid = "DateTime@".To<TypeCode>(TypeCode.Empty);
 
+//"DateTime@" value is not valid. So, result will be null
 TypeCode? dateTimeTypeCode_AsNotNullable = "DateTime@".To<TypeCode?>(null);
 
 TypeCode booleanTypeCode_AsValid = "Boolean".To<TypeCode>();
@@ -44,6 +46,16 @@ TypeCode booleanTypeCode_AsValid = "Boolean".To<TypeCode>();
 DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
 
 DateTime dateTime2 = DateTime.Now.ToShortDateString().To<DateTime>();
+
+DateTime dateTime3 = "3/1/2015 6:35:50 PM".To<DateTime>(DateTime.MinValue);
+
+DateTime dateTime4 = "3/1/2015".To<DateTime>(DateTime.MinValue);
+
+//"3/1/2015@" value is not valid. So, result will be DateTime.MinValue
+DateTime dateTime5 = "3/1/2015@".To<DateTime>(DateTime.MinValue);
+
+//"3/1/2015@" value is not valid. So, result will be null
+DateTime? dateTime6 = "3/1/2015@".To<DateTime?>(null);
 ```
 
 ####How to Convert TimeSpan string values to TimeSpan Types?
@@ -52,14 +64,40 @@ DateTime dateTime2 = DateTime.Now.ToShortDateString().To<DateTime>();
 
 ```
 
-##How to Convert Primitive string values to Primitive Types?
+####How to Convert Primitive string values to Primitive Types?
 
 ```csharp
 int integer_AsValid = "25".To<int>(-1);
 
+//"25j" value is not valid. So, result will be -1
 int integer_AsNotValid = "25j".To<int>(-1);
 
+//"25j" value is not valid. So, result will be null
 int? integer_AsNullable = "25j".To<int?>(null);
+
+double double1 = "30.36".To<double>();
+
+float float1 = "45.21".To<float>();
+
+decimal decimal1 = "4544343566".To<decimal>();
+
+Single single1 = "32893".To<Single>();
+
+bool bool1 = "True".To<bool>();
+
+bool bool2 = "FALSE".To<bool>();
+
+bool bool3 = "1".To<bool>();
+
+bool bool4 = "0".To<bool>();
+
+bool bool5 = "yes".To<bool>();
+
+bool bool6 = "no".To<bool>();
+
+bool bool7 = "off".To<bool>();
+
+bool bool8 = "on".To<bool>();
 ```
 
 
