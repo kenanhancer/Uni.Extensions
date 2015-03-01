@@ -1,4 +1,4 @@
-##How To Install It?
+###How To Install It?
 Drop Uni C#.NET code file into your project and change it as you wish or you can install from NuGet Galery;
 
 If you want to install from Nuget, you should write Package Manager Console below code and Uni will be installed automatically.
@@ -9,7 +9,7 @@ By the way, you can also reach Uni NuGet package from http://nuget.org/packages/
 
 Let's have a look at Uni.Extensions usages like below.
 
-##How To Convert Guid string value to Guid Type?
+####How To Convert Guid string value to Guid Type?
 Let's say we store guid values in database as string. When we want to use in .Net side, we should parse firstly.
 
 ```csharp
@@ -24,7 +24,7 @@ Guid guid_AsNotValid = "63ba52b5-1dd5-4b26-ba27-83f62c3d7e48@@@".To<Guid>(Guid.E
 Guid? guid_AsNullable = "63ba52b5-1dd5-4b26-ba27-83f62c3d7e48@@@".To<Guid?>(null);
 ```
 
-##How To Convert Enum string value to Enum Type?
+####How To Convert Enum string value to Enum Type?
 
 As an example, I use TypeCode Enum in System namespace.
 
@@ -38,6 +38,20 @@ TypeCode? dateTimeTypeCode_AsNotNullable = "DateTime@".To<TypeCode?>(null);
 TypeCode booleanTypeCode_AsValid = "Boolean".To<TypeCode>();
 ```
 
+####How to Convert DateTime string values to DateTime Types?
+
+```csharp
+DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
+
+DateTime dateTime2 = DateTime.Now.ToShortDateString().To<DateTime>();
+```
+
+####How to Convert TimeSpan string values to TimeSpan Types?
+
+```csharp
+
+```
+
 ##How to Convert Primitive string values to Primitive Types?
 
 ```csharp
@@ -48,10 +62,4 @@ int integer_AsNotValid = "25j".To<int>(-1);
 int? integer_AsNullable = "25j".To<int?>(null);
 ```
 
-##How to Convert DateTime and TimeSpan string values to DateTime and TimeSpan Types?
 
-```csharp
-DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
-
-DateTime dateTime2 = DateTime.Now.ToShortDateString().To<DateTime>();
-```
