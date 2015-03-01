@@ -61,7 +61,7 @@ DateTime? dateTime6 = "3/1/2015@".To<DateTime?>(null);
 ####How to Convert TimeSpan string values to TimeSpan Types?
 
 ```csharp
-
+TimeSpan timeSpan = "6:35:50 PM".To<TimeSpan>();
 ```
 
 ####How to Convert Primitive string values to Primitive Types?
