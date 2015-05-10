@@ -1,16 +1,16 @@
 ###How To Install It?
-Drop Uni C#.NET code file into your project and change it as you wish or you can install from NuGet Galery;
+Drop `UniExtensions` C#.NET code file into your project and change it as you wish or you can install from `NuGet Galery`;
 
-If you want to install from Nuget, you should write Package Manager Console below code and Uni will be installed automatically.
+If you want to install from `Nuget`, you should write Package Manager Console below code and `Uni.Extensions` will be installed automatically.
 ```
 Install-Package Uni.Extensions
 ```
-By the way, you can also reach Uni NuGet package from http://nuget.org/packages/Uni.Extensions address.
+By the way, you can also reach `Uni.Extensions` `NuGet` package from http://nuget.org/packages/Uni.Extensions address.
 
-Let's have a look at Uni.Extensions usages like below.
+Let's have a look at `Uni.Extensions` usages like below.
 
-####How To Convert Guid string value to Guid Type?
-Let's say we store guid values in database as string. When we want to use in .Net side, we should parse firstly.
+####How To Convert `Guid string` value to `Guid` Type?
+Let's say we store guid values in database as string. When we want to use in `.Net` side, we should parse firstly.
 
 ```csharp
 Guid guid_AsValid = "63ba52b5-1dd5-4b26-ba27-83f62c3d7e48".To<Guid>();
@@ -24,7 +24,7 @@ Guid guid_AsNotValid = "63ba52b5-1dd5-4b26-ba27-83f62c3d7e48@@@".To<Guid>(Guid.E
 Guid? guid_AsNullable = "63ba52b5-1dd5-4b26-ba27-83f62c3d7e48@@@".To<Guid?>(null);
 ```
 
-####How To Convert Enum string value to Enum Type?
+####How To Convert `Enum string` value to `Enum` Type?
 
 As an example, I use TypeCode Enum in System namespace.
 
@@ -40,7 +40,7 @@ TypeCode? dateTimeTypeCode_AsNotNullable = "DateTime@".To<TypeCode?>(null);
 TypeCode booleanTypeCode_AsValid = "Boolean".To<TypeCode>();
 ```
 
-####How to Convert DateTime string values to DateTime Types?
+####How to Convert `DateTime string` values to `DateTime` Types?
 
 ```csharp
 DateTime dateTime = DateTime.Now.ToString().To<DateTime>();
@@ -58,13 +58,13 @@ DateTime dateTime5 = "3/1/2015@".To<DateTime>(DateTime.MinValue);
 DateTime? dateTime6 = "3/1/2015@".To<DateTime?>(null);
 ```
 
-####How to Convert TimeSpan string values to TimeSpan Types?
+####How to Convert `TimeSpan string` values to `TimeSpan` Types?
 
 ```csharp
 TimeSpan timeSpan = "6:35:50 PM".To<TimeSpan>();
 ```
 
-####How to Convert Primitive string values to Primitive Types?
+####How to Convert `Primitive string` values to `Primitive` Types?
 
 ```csharp
 int integer_AsValid = "25".To<int>(-1);
@@ -100,7 +100,7 @@ bool bool7 = "off".To<bool>();
 bool bool8 = "on".To<bool>();
 ```
 
-####How to Convert Strongly Type to ExpandoObject?
+####How to Convert `POCO` Type to `ExpandoObject`?
 
 ```csharp
 public class Person
@@ -116,7 +116,7 @@ var person1 = new Person { PersonID = 1, FirstName = "Enes", LastName = "Hançer
 var person2 = new Person { PersonID = 2, FirstName = "Sinan", LastName = "Hançer" }.ToExpando();
 ```
 
-####How to Convert Dictionary Type to ExpandoObject or Strongly Type Object?
+####How to Convert `Dictionary` Type to `ExpandoObject` or `POCO` Type Object?
 
 ```csharp
 public class Person
@@ -145,7 +145,7 @@ Person personStronglyObj = personDict.To<Person>();
 var personExpandoObject = personDict.ToExpando();
 ```
 
-####How to Convert object to Dictionary?
+####How to Convert `object` to `Dictionary`?
 
 ```csharp
 public class Person
@@ -161,7 +161,7 @@ var personObj = new Person { PersonID = 1, FirstName = "Enes", LastName = "Hanç
 IDictionary<string, object> personToDict = personObj.ToDictionary();
 ```
 
-####How to Convert object to DataTable?
+####How to Convert `object` to `DataTable`?
 
 ```csharp
 //Anonymous object to DataTable
@@ -192,7 +192,7 @@ var customerList = new List<dynamic>{
 DataTable dt4 = customerList.ToDataTable();
 ```
 
-####How to Convert Collection to CSV?
+####How to Convert `Collection` to `CSV`?
 
 ```csharp
 var customerList = new List<dynamic>{
